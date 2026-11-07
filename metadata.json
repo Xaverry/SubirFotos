@@ -1,0 +1,6 @@
+{
+  "name": "Drive Uploader",
+  "description": "Aplicación sencilla para subir archivos directamente a la carpeta compartida de Google Drive.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
