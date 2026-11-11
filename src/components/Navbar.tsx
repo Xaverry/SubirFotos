@@ -70,18 +70,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span className="hidden md:inline">Código QR</span>
           </button>
 
-          {/* Direct Drive Folder Link */}
-          <a
-            href={TARGET_FOLDER_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Abrir carpeta en Google Drive"
-            className="flex items-center gap-1.5 px-3 py-2 text-xs sm:text-sm font-medium text-blue-700 bg-blue-50 hover:bg-blue-100 rounded-xl transition cursor-pointer border border-blue-200/60"
-          >
-            <ExternalLink className="w-4 h-4 text-blue-600" />
-            <span className="hidden sm:inline">Ver Carpeta</span>
-          </a>
-
           {/* User auth state */}
           {user ? (
             <div className="flex items-center gap-2 pl-2 border-l border-slate-200">

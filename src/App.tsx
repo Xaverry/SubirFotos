@@ -26,10 +26,8 @@ import {
 } from './lib/drive';
 import { UploadItem, UploadedFileRecord } from './types';
 import { Navbar } from './components/Navbar';
-import { FolderInfoCard } from './components/FolderInfoCard';
 import { UploadZone } from './components/UploadZone';
 import { UploadQueue } from './components/UploadQueue';
-import { UploadedHistory } from './components/UploadedHistory';
 import { QRCodeModal } from './components/QRCodeModal';
 
 export default function App() {
@@ -308,8 +306,8 @@ export default function App() {
           </div>
         </div>
 
-        {/* Target Folder Information Card */}
-        <FolderInfoCard />
+        {/* Upload Zone (Drag & Drop, Camera, File Selector) - Sección Principal */}
+        <UploadZone onFilesSelected={handleFilesSelected} />
 
         {/* Upload Queue (Shows when uploads are running or completed) */}
         <UploadQueue
@@ -318,12 +316,6 @@ export default function App() {
           onCancel={handleCancel}
           onClearCompleted={handleClearCompleted}
         />
-
-        {/* Upload Zone (Drag & Drop, Camera, File Selector) */}
-        <UploadZone onFilesSelected={handleFilesSelected} />
-
-        {/* Uploaded History for current session */}
-        <UploadedHistory files={uploadedHistory} />
 
         {/* Helpful Highlights */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
@@ -375,16 +367,6 @@ export default function App() {
             >
               <span>Descargar código (.ZIP)</span>
             </button>
-            <span>•</span>
-            <a
-              href={TARGET_FOLDER_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-600 transition flex items-center gap-1"
-            >
-              <span>Ver carpeta en Google Drive</span>
-              <ExternalLink className="w-3 h-3" />
-            </a>
           </div>
         </div>
       </footer>

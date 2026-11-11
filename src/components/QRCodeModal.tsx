@@ -84,32 +84,6 @@ export const QRCodeModal: React.FC<QRCodeModalProps> = ({ isOpen, onClose }) => 
           Colócalo en mesas o carteles para que cualquier persona escanee con su celular y suba sus fotos
         </p>
 
-        {/* Toggle between App link and Folder link */}
-        <div className="inline-flex p-1 bg-slate-100 rounded-xl mb-5 text-xs font-semibold">
-          <button
-            type="button"
-            onClick={() => setQrType('app')}
-            className={`px-3 py-1.5 rounded-lg transition cursor-pointer ${
-              qrType === 'app'
-                ? 'bg-white text-slate-900 shadow-2xs'
-                : 'text-slate-500 hover:text-slate-700'
-            }`}
-          >
-            App de Subida
-          </button>
-          <button
-            type="button"
-            onClick={() => setQrType('folder')}
-            className={`px-3 py-1.5 rounded-lg transition cursor-pointer ${
-              qrType === 'folder'
-                ? 'bg-white text-slate-900 shadow-2xs'
-                : 'text-slate-500 hover:text-slate-700'
-            }`}
-          >
-            Carpeta Drive Directa
-          </button>
-        </div>
-
         {/* QR Code Canvas Canvas Area */}
         <div className="bg-slate-50 p-4 rounded-2xl inline-block border border-slate-200/80 shadow-inner mb-4">
           <canvas ref={canvasRef} className="rounded-lg max-w-full" />
